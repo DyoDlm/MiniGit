@@ -1,3 +1,4 @@
 objs/*
+utils/*.o
 run_server
 run_client
