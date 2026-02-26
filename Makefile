@@ -1,17 +1,34 @@
 SERVER = run_server
 CLIENT = run_client
 
-SRCS_SERVER = main_server.c
-SRCS_CLIENT = main_client.c
+$DS = server/srcs
+$DC = client/srcs
 
-TOOLS = ./tools/ft_atoi.c \
-	./tools/ft_putstr.c
+SRCS_SERVER = server/main_server.cpp \
+	      $(DS)/Request.cpp \
+	      $(DS)/Response.cpp \
+	      $(DS)/ \
+	      $(DS)/ \
+	      $(DS)/
 
-CC = cc
-CFLAGS = -Wall -Werror -Wextra $(INCLUDE_DIRS)
+SRCS_CLIENT = client/main_client.c \
+	      $(DC)/HttpRequest.cpp \
+	      $(DC)/ \
+	      $(DC)/ \
+	      $(DC)/ \
+	      $(DC)/
 
-OBJS_SERVER = $(SRCS_SERVER:.c=.o)
-OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)
+TOOLS = ./utils/Colors.cpp \
+	./utils/Error.cpp \
+	./utils/Debug.cpp \
+	./utils/utils.cpp
+
+INCLUDE_DIRS = 
+CC = c++
+CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE_DIRS)
+
+OBJS_SERVER = $(SRCS_SERVER:.cpp=.o)
+OBJS_CLIENT = $(SRCS_CLIENT:.cpp=.o)
 
 all: $(SERVER) $(CLIENT)
 

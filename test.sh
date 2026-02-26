@@ -11,5 +11,6 @@ cmds = "\
 
 for cmd in $cmds
 do
-	./$cmd.sh
+	./$cmd.sh > $cmd.log 
+	mv $cmd.log logs
 done
