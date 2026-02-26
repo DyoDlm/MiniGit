@@ -23,7 +23,10 @@ TOOLS = ./utils/Colors.cpp \
 	./utils/Debug.cpp \
 	./utils/utils.cpp
 
-INCLUDE_DIRS = 
+INCLUDE_DIRS = utils \
+	       server/headers \
+	       client/headers
+
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE_DIRS)
 
