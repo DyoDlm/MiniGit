@@ -1,5 +1,5 @@
-SERVER = run_server
-CLIENT = run_client
+SERVER = bin_server
+CLIENT = bin_client
 
 DS = server/srcs
 DC = client/srcs

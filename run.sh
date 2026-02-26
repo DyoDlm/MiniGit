@@ -10,7 +10,7 @@ cmds="\
 "
 make fclean
 make
-./run_server "DyoDlm" "foo123" "file1 : content file2 : content file3 : content" "add (cmd)" "(option)" ". (argument)"
+./bin_server "DyoDlm" "foo123" "repo/dir/file : content \nrepo/file2 : content \nrepo/file3 : content" "add (cmd)" "(option)" ". (argument)"
 
 exit
 for cmd in $cmds
