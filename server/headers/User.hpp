@@ -3,13 +3,15 @@
 
 # include <string>
 # include <vector>
+# include <Repo.hpp>
 
 class User {
 	private:
-		std::string	_name;
-		std::string	_pwd;
-		std::string	_key;
-		std::vector	_repos;
+		std::string		_name;
+		std::string		_pwd;
+		std::string		_publickey;
+		std::string		_privatekey;
+		std::vector<Repo>	_repos;
 	public:
 		User();
 		User(...);
