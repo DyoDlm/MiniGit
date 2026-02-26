@@ -1,5 +1,5 @@
 # Ugit because fuck microsoft
-blalbla.................
+A simple self-hosted alternative to git.
 
 # Commands (currently beeing built)
 ## add
