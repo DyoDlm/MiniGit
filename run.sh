@@ -16,7 +16,7 @@ exit
 for cmd in $cmds
 do
 	echo $cmd
-	#./$cmd.sh > $cmd.log 
-	#mv $cmd.log logs
+	#./tests/cmds/$cmd.sh > $cmd.log 
+	#mv $cmd.log tests/logs
 done
 
