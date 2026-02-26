@@ -4,20 +4,21 @@
 # include <iostream>
 # include <string>
 # include <sstream>
+# include "Request.hpp"
 
-class Responde:  //      cmd [--option] [args]
+class Response {
         private:
-                std::string     _cmd;
-                std::string     _option;
-                std::string     _args;
-
+		std::string	_status;
         public:
 		Response();
+		Response(const Request &obj);
 		Response(const Response &obj);
 		~Response();
 		
+		std::string	getstatus() const;
+		
 		Response	&operator=(const Response &obj);
-
+};
 		
 std::ostream	&operator<<(std::ostream &stream, const Response &obj);
 

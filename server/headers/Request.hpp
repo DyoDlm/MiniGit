@@ -4,20 +4,27 @@
 # include <iostream>
 # include <string>
 # include <sstream>
+# include <stddef.h>
 
-class Request:  //      cmd [--option] [args]
+class Request {//      cmd [--option] [args]
         private:
                 std::string     _cmd;
                 std::string     _option;
                 std::string     _args;
-
+		std::string	_status;
         public:
 		Request();
+		Request(int ac, char **av);
 		Request(const Request &obj);
 		~Request();
 		
-		Request	&operator=(const Request &obj);
+		std::string	getcmd() const;
+		std::string	getoption() const;
+		std::string	getargs() const;
+		std::string	getstatus() const;
 
+		Request	&operator=(const Request &obj);
+};
 		
 std::ostream	&operator<<(std::ostream &stream, const Request &obj);
 

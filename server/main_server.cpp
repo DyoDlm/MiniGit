@@ -3,7 +3,8 @@
 
 static short int	exec(Response &obj)
 {
-	return ;
+	(void)obj;
+	return 0;
 }
 
 int	main(int ac, char **av)
@@ -15,7 +16,7 @@ int	main(int ac, char **av)
 	std::cout << response << std::endl;
 
 	if (!exec(response))
-		std::cout << "
+		std::cout << "Error" << std::endl;
 
 	return 0;
 }
