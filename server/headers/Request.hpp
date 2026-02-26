@@ -8,9 +8,14 @@
 
 class Request {//      cmd [--option] [args]
         private:
-                std::string     _cmd;
+		std::string	_user;
+		std::string	_pwd;
+		std::string	_content;
+
+		std::string     _cmd;
                 std::string     _option;
                 std::string     _args;
+		
 		std::string	_status;
         public:
 		Request();
@@ -18,6 +23,9 @@ class Request {//      cmd [--option] [args]
 		Request(const Request &obj);
 		~Request();
 		
+		std::string	getuser() const;
+		std::string	getpwd() const;
+		std::string	getcontent() const;
 		std::string	getcmd() const;
 		std::string	getoption() const;
 		std::string	getargs() const;

@@ -1,24 +1,33 @@
 #include "Request.hpp"
 
 Request::Request() :
-        _cmd(""), _option(""), _args(""), _status("")
+        _user(""), _pwd(""), _content(""), _cmd(""), _option(""), _args(""), _status("")
 {
 	return ;
 }
 
 Request::Request(int ac, char **av) :
-	_cmd(""), _option(""), _args(""), _status("")
+	_user(""), _pwd(""), _content(""), _cmd(""), _option(""), _args(""), _status("")
 {
 	switch (ac) 
 	{
+		case 7:
+			this->_args = av[6];
+			// fall through
+		case 6:
+			this->_option = av[5];
+			// fall through
+		case 5:
+			this->_cmd = av[4];
+			// fall through
+		case 4:
+			this->_content = av[3];
+			// fall through
 		case 3:
-			this->_cmd = av[1];
+			this->_pwd = av[2];
 			// fall through
 		case 2:
-			this->_option = av[2];
-			// fall through
-		case 1:
-			this->_args = av[3];
+			this->_user = av[1];
 			// fall trough
 		default:
 			break ;
@@ -35,6 +44,18 @@ Request::Request(const Request &obj)
 Request::~Request()
 {
 	return ;
+}
+
+std::string	Request::getuser() const {
+	return this->_user;
+}
+
+std::string	Request::getpwd() const {
+	return this->_pwd;
+}
+
+std::string	Request::getcontent() const {
+	return this->_content;
 }
 
 std::string	Request::getcmd() const {
@@ -55,9 +76,12 @@ std::string	Request::getstatus() const {
 
 std::ostream	&operator<<(std::ostream &stream, const Request &obj)
 {
-	stream <<  "\nCMD    : " << obj.getcmd()
-		<< "\nOPTION : " << obj.getoption()
-		<< "\nARGS   : " << obj.getargs()
-		<< "\nSTATUS : " << obj.getstatus();
+	stream <<  "\nUSER    : " << obj.getuser()
+		<< "\nPWD     : " << obj.getpwd()
+		<< "\nCONTENT : " << obj.getcontent()
+		<< "\nCMD     : " << obj.getcmd()
+		<< "\nOPTION  : " << obj.getoption()
+		<< "\nARGS    : " << obj.getargs()
+		<< "\nSTATUS  : " << obj.getstatus();
 	return stream;
 }
