@@ -1,5 +1,5 @@
-SERVER = run_server
-CLIENT = run_client
+SERVER = server
+CLIENT = client
 
 SRCS_SERVER = main_server.c
 SRCS_CLIENT = main_client.c
@@ -31,5 +31,4 @@ fclean: clean
 	rm -f $(SERVER) $(CLIENT)
 
 re: fclean all
-
 

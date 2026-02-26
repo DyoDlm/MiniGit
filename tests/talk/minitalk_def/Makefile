@@ -1,11 +1,17 @@
-SERVER = run_server
-CLIENT = run_client
+SERVER = server
+CLIENT = client
 
 SRCS_SERVER = main_server.c
 SRCS_CLIENT = main_client.c
 
 TOOLS = ./tools/ft_atoi.c \
-	./tools/ft_putstr.c
+	./tools/ft_putstr.c \
+	./tools/get_next_line.c \
+	./tools/get_next_line_utils.c \
+	./tools/ft_strncmp.c \
+	./tools/ft_putnbr_fd.c \
+	./tools/ft_memset.c \
+	./tools/messages.c 
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra $(INCLUDE_DIRS)
@@ -31,5 +37,4 @@ fclean: clean
 	rm -f $(SERVER) $(CLIENT)
 
 re: fclean all
-
 
