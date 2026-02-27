@@ -3,43 +3,15 @@
 
 # include <string>
 # include <iostream>
-
-class File {
-	private:
-		std::string	_content;
-
-	public:
-		File();
-		~File();
-};
-
-std::ostream    &operator<<(std::ostream &stream, const File &obj);
-
-
-
-class Dir {
-	private:
-		std::vector<Dir>	_dirs;
-		std::vector<File>	_files;
-	public:
-		Dir();
-		Dir(...);
-		Dir(const Dir &obj);
-		~Dir();
-
-		Dir	&operator=(const Dir &obj);	
-};
-
-std::ostream    &operator<<(std::ostream &stream, const Dir &obj);
-
+# include <vector>
+# include "Branch.hpp"
 
 
 class Repo {
 	private:
-		std::vector<Dir>	_dirs;
-		std::vector<File>	_files;
-		std::string		_user;
-		bool			_private;
+		std::vector<Branch>		_branches;
+		std::vector<std::string>	_owners;
+		bool				_private;
 	public:
 		Repo();
 		Repo(...);
