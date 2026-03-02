@@ -18,10 +18,10 @@ class User {
 		User(const User &obj);
 		~User();
 
-		std::string	getname() const;
-		std::string	getpwd() const;
-		std::string	getkey() const;
-		std::vector	getrepos() const;
+		std::string	        getname() const;
+		std::string	        getpwd() const;
+		std::string	        getkey() const;
+		std::vector<Repo>	getrepos() const;
 		
 		User	&operator=(const User &obj);
 };

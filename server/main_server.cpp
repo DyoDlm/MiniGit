@@ -1,4 +1,3 @@
-#include "Request.hpp"
 #include "Response.hpp"
 
 static short int	exec(Response &obj)

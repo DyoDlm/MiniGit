@@ -1,12 +1,15 @@
 #include "Branch.hpp"
 
-Branch::Branch()
+Branch::Branch() :
+    _user(""), _id(0), _head(false), _main(false)
 {
     return ;
 }
 
-Branch::Branch(...)
+Branch::Branch(std::string user, int from_branch_id)
 {
+    //  find user in db
+    //  
     return ;
 }
 
